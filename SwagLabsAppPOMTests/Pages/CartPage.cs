@@ -1,0 +1,23 @@
+﻿using OpenQA.Selenium;
+
+namespace SwagLabsAppPOMTests.Pages
+{
+    public class CartPage : BasePage
+    {
+        private readonly By cartItem = By.CssSelector(".cart_item");
+        private readonly By checkoutButton = By.CssSelector("#checkout");
+        public CartPage(IWebDriver driver) : base(driver)
+        {
+        }
+
+        public bool IsCartItemDisplayed()
+        {
+            return FindElement(cartItem).Displayed;
+        }
+
+        public void ClickCheckoutButton()
+        {
+            Click(checkoutButton);
+        }
+    }
+}
